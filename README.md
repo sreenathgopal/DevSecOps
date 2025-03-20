@@ -25,22 +25,31 @@ This library contains list of tools and methodologies accompanied with resources
 
 # Table of Contents
 
-- [Definition](#what-is-devsecops)
+- [Ultimate DevSecOps library](#ultimate-devsecops-library)
+  - [Contribution rules](#contribution-rules)
+- [Table of Contents](#table-of-contents)
+- [What is DevSecOps](#what-is-devsecops)
 - [Tooling](#tooling)
-- [Precommit and threat modeling](#pre-commit-time-tools)
-- [SAST](#sast)
-- [DAST](#dast)
-- [Orchestration](#orchestration)
-- [Supply chain and dependencies](#oss-and-dependency-management)
-- [Infrastructure as code](#infrastructure-as-code-security)
-- [Containers security](#containers)
-- [Kubernetes](#kubernetes) 
-- [Cloud](#multi-cloud)
-- [Chaos engineering](#chaos-engineering)
-- [Policy as code](#policy-as-code)
-- [Methodologies](#methodologies-whitepapers-and-architecture)
+  - [Pre-commit time tools](#pre-commit-time-tools)
+  - [Secrets management](#secrets-management)
+  - [OSS and Dependency management](#oss-and-dependency-management)
+  - [Supply chain specific tools](#supply-chain-specific-tools)
+  - [SAST](#sast)
+  - [DAST](#dast)
+  - [Continuous deployment security](#continuous-deployment-security)
+  - [Kubernetes](#kubernetes)
+  - [Containers](#containers)
+  - [Multi-Cloud](#multi-cloud)
+  - [AWS](#aws)
+  - [Google cloud platform](#google-cloud-platform)
+  - [Microsoft Azure](#microsoft-azure)
+  - [Policy as code](#policy-as-code)
+  - [Chaos engineering](#chaos-engineering)
+  - [Infrastructure as code security](#infrastructure-as-code-security)
+  - [Orchestration](#orchestration)
+- [Methodologies, whitepapers and architecture](#methodologies-whitepapers-and-architecture)
 - [Other](#other)
-- [License](#license) 
+- [License](#license)
 
 # What is DevSecOps 
 DevSecOps focuses on security automation, testing and enforcement during DevOps - Release - SDLC cycles. The whole meaning behind this methodology is connecting together Development, Security and Operations. DevSecOps is methodology providing different methods, techniques and processes backed mainly with tooling focusing on developer / security experience. 
@@ -80,6 +89,7 @@ Modern DevSecOps tools allow using Threat modeling as code or generation of thre
 | **DevSkim** | [https://github.com/microsoft/DevSkim](https://github.com/microsoft/DevSkim) |  DevSkim is a framework of IDE extensions and language analyzers that provide inline security analysis |![DevSkim](https://img.shields.io/github/stars/microsoft/DevSkim?style=for-the-badge)|
 | **detect-secrets** | [https://github.com/Yelp/detect-secrets](https://github.com/Yelp/detect-secrets) |  Detects secrets in your codebase |![DevSkim](https://img.shields.io/github/stars/Yelp/detect-secrets?style=for-the-badge)| 
 | **tflint** | [https://github.com/terraform-linters/tflint](https://github.com/terraform-linters/tflint) | A Pluggable Terraform Linter | ![tflint](https://img.shields.io/github/stars/terraform-linters/tflint?style=for-the-badge)|
+| **Steampipe Code Plugin** | [https://github.com/turbot/steampipe-plugin-code](https://github.com/turbot/steampipe-plugin-code) | Use SQL to detect secrets from source code and data sources. | [![GitHub stars](https://img.shields.io/github/stars/turbot/steampipe-plugin-code)](https://github.com/turbot/steampipe-plugin-code/stargazers) |
 
 ## Secrets management 
 Secrets management includes managing, versioning, encryption, discovery, rotating, provisioning of passwords, certificates, configuration values and other types of secrets. 
@@ -120,6 +130,9 @@ Dependency security testing and analysis is very important part of discovering s
 | **Dependabot** | [https://github.com/dependabot/dependabot-core](https://github.com/dependabot/dependabot-core) | Automated dependency updates built into GitHub providing security alerts |![Dependabot](https://img.shields.io/github/stars/dependabot/dependabot-core?style=for-the-badge)| 
 | **Renovatebot** | [https://github.com/renovatebot/renovate](https://github.com/renovatebot/renovate) | Automated dependency updates, patches multi-platform and multi-language |![Renovatebot](https://img.shields.io/github/stars/renovatebot/renovate?style=for-the-badge)| 
 | **npm-check** | [https://www.npmjs.com/package/npm-check](https://www.npmjs.com/package/npm-check) | Check for outdated, incorrect, and unused dependencies. |![npm-check](https://img.shields.io/github/stars/dylang/npm-check?style=for-the-badge)| 
+| **Security Scorecards** | [https://securityscorecards.dev](https://securityscorecards.dev) | Checks for several security health metrics on open source libraries and provides a score (0-10) to be considered in the decision making of what libraries to use. |![scorecard](https://img.shields.io/github/stars/ossf/scorecard?style=for-the-badge)| 
+| **Syft** | [https://github.com/anchore/syft](https://github.com/anchore/syft) | CLI tool and library for generating an SBOM from container images (and filesystems). |![syft](https://img.shields.io/github/stars/anchore/syft?style=for-the-badge)| 
+| **OSS Review Toolkit** | [https://github.com/oss-review-toolkit/ort](https://github.com/oss-review-toolkit/ort) | A suite of tools to automate software compliance checks. |![ort](https://img.shields.io/github/stars/oss-review-toolkit/ort?style=for-the-badge)| 
 
 ## Supply chain specific tools 
 
@@ -131,7 +144,8 @@ Supply chain is often the target of attacks. Which libraries you use can have a 
 | **in-toto** | [https://github.com/in-toto/attestation/tree/v0.1.0/spec](https://github.com/in-toto/attestation/tree/v0.1.0/spec) | An in-toto attestation is authenticated metadata about one or more software artifacts |![in-toto](https://img.shields.io/github/stars/in-toto/attestation?style=for-the-badge) | 
 | **SLSA** | [Official GitHub link](https://github.com/slsa-framework/slsa/blob/main/docs/index.md ) | Supply-chain Levels for Software Artifacts |![SLSA](https://img.shields.io/github/stars/slsa-framework/slsa?style=for-the-badge) | 
 | **kritis** | [https://github.com/grafeas/kritis](https://github.com/grafeas/kritis) | Solution for securing your software supply chain for Kubernetes apps |![Kritis](https://img.shields.io/github/stars/grafeas/kritis?style=for-the-badge)|
-| **ratify** | [https://github.com/deislabs/ratify](https://github.com/deislabs/ratify) | Artifact Ratification Framework |![ratify](https://img.shields.io/github/stars/deislabs/ratify?style=for-the-badge)| 
+| **ratify** | [https://github.com/deislabs/ratify](https://github.com/deislabs/ratify) | Artifact Ratification Framework |![ratify](https://img.shields.io/github/stars/deislabs/ratify?style=for-the-badge)|
+| **chain-bench** | [https://github.com/aquasecurity/chain-bench](https://github.com/aquasecurity/chain-bench) | Supply Chain Audit Tool |![chain-bench](https://img.shields.io/github/stars/aquasecurity/chain-bench?style=for-the-badge)| 
 
 
 ## SAST
@@ -148,7 +162,10 @@ Static code review tools working with source code and looking for known patterns
 | **nodejsscan** | [https://github.com/ajinabraham/nodejsscan](https://github.com/ajinabraham/nodejsscan) | NodeJs SAST scanner with GUI |![NodeJSscan](https://img.shields.io/github/stars/ajinabraham/nodejsscan?style=for-the-badge) | 
 | **FindSecurityBugs** | [https://find-sec-bugs.github.io/](https://find-sec-bugs.github.io/) | The SpotBugs plugin for security audits of Java web applications |![FindSecuritybugs](https://img.shields.io/github/stars/find-sec-bugs/find-sec-bugs?style=for-the-badge) | 
 | **SonarQube community** | [https://github.com/SonarSource/sonarqube](https://github.com/SonarSource/sonarqube) | Detect security issues in code review with Static Application Security Testing (SAST) |![SonarQube](https://img.shields.io/github/stars/SonarSource/sonarqube?style=for-the-badge) | 
-| **gosec** | [https://github.com/securego/gosec](https://github.com/securego/gosec) | Inspects source code for security problems by scanning the Go AST. |![SonarQube](https://img.shields.io/github/stars/securego/gosec?style=for-the-badge) | 
+| **gosec** | [https://github.com/securego/gosec](https://github.com/securego/gosec) | Inspects source code for security problems by scanning the Go AST. |![gosec](https://img.shields.io/github/stars/securego/gosec?style=for-the-badge) | 
+| **Safety** | [https://github.com/pyupio/safety](https://github.com/pyupio/safety) | Checks Python dependencies for known security vulnerabilities . |![Safety](https://img.shields.io/github/stars/pyupio/safety?style=for-the-badge) | 
+| **Bearer** | [https://github.com/Bearer/bearer](https://github.com/Bearer/bearer) | Detect security issues in various languages (JavaScript/TypeScript, Ruby, Java, PHP...) . |![Safety](https://img.shields.io/github/stars/Bearer/bearer?style=for-the-badge) | 
+| **mobsfscan** | [https://github.com/MobSF/mobsfscan](https://github.com/MobSF/mobsfscan) | Detect security issues in Android and iOS source code (Java/Kotlin and Objective C/Swift)|![Safety](https://img.shields.io/github/stars/MobSF/mobsfscan?style=for-the-badge) |
 
 **Note:** Semgrep is free CLI tool, however some rulesets (https://semgrep.dev/r) are having various licences, some can be free to use and can be commercial.  
 
@@ -161,6 +178,7 @@ Dynamic application security testing (DAST) is a type of application testing (in
 | Name | URL | Description | Meta | 
 | :---------- | :---------- | :---------- | :----------: |
 | **Zap proxy** | [https://owasp.org/www-project-zap/](https://owasp.org/www-project-zap/) | Zap proxy providing various docker containers for CI/CD pipeline|![ZAP](https://img.shields.io/github/stars/zaproxy/zaproxy?style=for-the-badge) | 
+| **Akto** | [https://github.com/akto-api-security/akto/](https://github.com/akto-api-security/akto)) |API Security Testing with 150+ YAML Tests|![Akto](https://img.shields.io/github/stars/akto-api-security/akto?style=for-the-badge) | 
 | **Wapiti** | [https://github.com/wapiti-scanner/wapiti ](https://github.com/wapiti-scanner/wapiti ) | Light pipeline ready scanning tool |![Wapiti](https://img.shields.io/github/stars/wapiti-scanner/wapiti?style=for-the-badge) | 
 | **Nuclei** | [https://github.com/projectdiscovery/nuclei](https://github.com/projectdiscovery/nuclei) | Template based security scanning tool |![Nuclei](https://img.shields.io/github/stars/projectdiscovery/nuclei?style=for-the-badge) | 
 | **purpleteam** | [https://github.com/purpleteam-labs/purpleteam](https://github.com/purpleteam-labs/purpleteam) | CLI DAST tool incubator project |![purpleteam](https://img.shields.io/github/stars/purpleteam-labs/purpleteam?style=for-the-badge) | 
@@ -188,9 +206,7 @@ Dynamic application security testing (DAST) is a type of application testing (in
 | **kube-score** | [https://github.com/zegl/kube-score](https://github.com/zegl/kube-score) | Static code analysis of your Kubernetes object definitions |![kube-score](https://img.shields.io/github/stars/zegl/kube-score?style=for-the-badge) | 
 | **kube-hunter** | [https://github.com/aquasecurity/kube-hunter](https://github.com/aquasecurity/kube-hunter) | Active scanner for k8s (purple)  |![kube-hunter](https://img.shields.io/github/stars/aquasecurity/kube-hunter?style=for-the-badge) | 
 | **Calico** | [https://github.com/projectcalico/calico](https://github.com/projectcalico/calico) | Calico is an open source networking and network security solution for containers  |![Calico](https://img.shields.io/github/stars/projectcalico/calico?style=for-the-badge) | 
-| **Kyverno** | [https://github.com/kyverno/kyverno/](https://github.com/kyverno/kyverno) | Kyverno is a policy engine designed for Kubernetes |![kyverno](https://img.shields.io/github/stars/kyverno/kyverno?style=for-the-badge) | 
 | **Krane** | [https://github.com/appvia/krane](https://github.com/appvia/krane) | Simple Kubernetes RBAC static analysis tool |![krane](https://img.shields.io/github/stars/appvia/krane?style=for-the-badge) | 
-| **Starboard** | [https://github.com/aquasecurity/starboard](https://github.com/aquasecurity/starboard ) | Starboard inegrates security tools by outputs into Kubernetes CRDs |![starboard](https://img.shields.io/github/stars/aquasecurity/starboard?style=for-the-badge) | 
 | **Gatekeeper** | [https://github.com/open-policy-agent/gatekeeper](https://github.com/open-policy-agent/gatekeeper) | Open policy agent gatekeeper for k8s |![gatekeeper](https://img.shields.io/github/stars/open-policy-agent/gatekeeper?style=for-the-badge) | 
 | **Inspektor-gadget** | [https://github.com/kinvolk/inspektor-gadget](https://github.com/kinvolk/inspektor-gadget ) | Collection of tools (or gadgets) to debug and inspect k8s |![inspector](https://img.shields.io/github/stars/kinvolk/inspektor-gadget?style=for-the-badge) | 
 | **kube-linter** | [https://github.com/stackrox/kube-linter ](https://github.com/stackrox/kube-linter) | Static analysis for Kubernetes |![kube-linter](https://img.shields.io/github/stars/stackrox/kube-linter?style=for-the-badge) | 
@@ -200,6 +216,12 @@ Dynamic application security testing (DAST) is a type of application testing (in
 | **Kubernetes-sigs BOM** | [https://github.com/kubernetes-sigs/bom](https://img.shields.io/github/stars/kubernetes-sigs/bom) |Kubernetes BOM generator |[![GitHub stars](https://img.shields.io/github/stars/kubernetes-sigs/bom)](https://img.shields.io/github/stars/kubernetes-sigs/bom) | 
 | **Capsule** | [https://github.com/clastix/capsule](https://github.com/clastix/capsule) | A multi-tenancy and policy-based framework for Kubernetes |![GitHub stars](https://img.shields.io/github/stars/clastix/capsule) |
 | **Badrobot** | [https://github.com/controlplaneio/badrobot](https://github.com/controlplaneio/badrobot) | Badrobot is a Kubernetes Operator audit tool |![GitHub stars](https://img.shields.io/github/stars/controlplaneio/badrobot) |
+| **kube-scan** | [https://github.com/octarinesec/kube-scan](https://github.com/octarinesec/kube-scan) |  k8s cluster risk assessment tool | ![kube-scan](https://img.shields.io/github/stars/octarinesec/kube-scan?style=for-the-badge)
+| **Istio** | [https://istio.io](https://istio.io) | Istio is a service mesh based on Envoy. Engage encryption, role-based access, and authentication across services. |![GitHub stars](https://img.shields.io/github/stars/istio/istio) |
+| **Kubernetes Insights** | [https://github.com/turbot/steampipe-mod-kubernetes-insights](https://github.com/turbot/steampipe-mod-kubernetes-insights) | Visualize Kubernetes inventory and permissions through relationship graphs. | [![GitHub stars](https://img.shields.io/github/stars/turbot/steampipe-mod-kubernetes-insights)](https://github.com/turbot/steampipe-mod-kubernetes-insights/stargazers) |
+| **Kubernetes Compliance** | [https://github.com/turbot/steampipe-mod-kubernetes-compliance](https://github.com/turbot/steampipe-mod-kubernetes-compliance) | Check compliance of Kubernetes configurations to security best practices. | [![GitHub stars](https://img.shields.io/github/stars/turbot/steampipe-mod-kubernetes-compliance)](https://github.com/turbot/steampipe-mod-kubernetes-compliance/stargazers) |
+| **trivy-operator** | [https://github.com/aquasecurity/trivy-operator](https://github.com/aquasecurity/trivy-operator) | Kubernetes-native security toolkit. | [![GitHub stars](https://img.shields.io/github/stars/aquasecurity/trivy-operator)](https://github.com/aquasecurity/trivy-operator/stargazers) | 
+
 
 ## Containers 
 
@@ -215,6 +237,8 @@ Dynamic application security testing (DAST) is a type of application testing (in
 | **Notary** | [https://github.com/notaryproject/notary](https://github.com/notaryproject/notary) | Docker signing|![Notary](https://img.shields.io/github/stars/notaryproject/notary?style=for-the-badge) | 
 | **Cosign** | [https://github.com/sigstore/cosign](https://github.com/sigstore/cosign) | Container signing|![Cosign](https://img.shields.io/github/stars/sigstore/cosign?style=for-the-badge) | 
 | **watchtower** | [https://github.com/containrrr/watchtower](https://github.com/containrrr/watchtower) | Updates the running version of your containerized app |![watchtower](https://img.shields.io/github/stars/containrrr/watchtower?style=for-the-badge) |
+| **Grype** | [https://github.com/anchore/grype](https://github.com/anchore/grype) | Vulnerability scanner for container images (and also filesystems). |![Grype](https://img.shields.io/github/stars/anchore/grype?style=for-the-badge) |
+| **Copacetic** | [https://github.com/project-copacetic/copacetic](https://github.com/project-copacetic/copacetic) | CLI tool for directly patching container images |![Copacetic](https://img.shields.io/github/stars/project-copacetic/copacetic?style=for-the-badge) | 
 
 ## Multi-Cloud 
 
@@ -223,7 +247,8 @@ Dynamic application security testing (DAST) is a type of application testing (in
 | **Cloudsploit** | [https://github.com/aquasecurity/cloudsploit](https://github.com/aquasecurity/cloudsploit) | Detection of security risks in cloud infrastructure |![Cloudsploit](https://img.shields.io/github/stars/aquasecurity/cloudsploit?style=for-the-badge) |
 | **ScoutSuite** | [https://github.com/nccgroup/ScoutSuite](https://github.com/nccgroup/ScoutSuite) | NCCgroup mutlicloud scanning tool |![ScoutSuite](https://img.shields.io/github/stars/nccgroup/ScoutSuite?style=for-the-badge) |
 | **CloudCustodian** | [https://github.com/cloud-custodian/cloud-custodian/](https://github.com/cloud-custodian/cloud-custodian/) | Multicloud security analysis framework |![CloudCustodian](https://img.shields.io/github/stars/cloud-custodian/cloud-custodian?style=for-the-badge) | 
-| **CloudGraph** | [https://github.com/cloudgraphdev/cli](https://github.com/cloudgraphdev/cli) | GraphQL API + Security for AWS, Azure, GCP, and K8s |![CloudGraph](https://img.shields.io/github/stars/cloudgraphdev/cli?style=for-the-badge) | 
+| **CloudGraph** | [https://github.com/cloudgraphdev/cli](https://github.com/cloudgraphdev/cli) | GraphQL API + Security for AWS, Azure, GCP, and K8s |![CloudGraph](https://img.shields.io/github/stars/cloudgraphdev/cli?style=for-the-badge) |
+| **Steampipe** | [https://github.com/turbot/steampipe](https://github.com/turbot/steampipe) | Instantly query your cloud, code, logs & more with SQL. Build on thousands of open-source benchmarks & dashboards for security & insights. | [![GitHub stars](https://img.shields.io/github/stars/turbot/steampipe)](https://github.com/turbot/steampipe/stargazers) |
 
 ## AWS 
 
@@ -250,7 +275,10 @@ AWS specific DevSecOps tooling. Tools here cover different areas like inventory 
 | **AWS open source security samples** | [Official AWS opensource repo](https://github.com/orgs/aws-samples/repositories?language=&q=security&sort=&type=) |Collection of official AWS open-source resources | ![Amazon AWS](https://img.shields.io/static/v1?style=for-the-badge&message=Amazon+AWS&color=232F3E&logo=Amazon+AWS&logoColor=FFFFFF&label=)| 
 | **AWS Firewall factory** | [Globaldatanet FMS automation](https://github.com/globaldatanet/aws-firewall-factory) |Deploy, update, and stage your WAFs while managing them centrally via FMS | ![Globaldatanet Firewall factory](https://img.shields.io/github/stars/globaldatanet/aws-firewall-factory?style=for-the-badge)| 
 | **Parliment** | [Parliment](https://github.com/duo-labs/parliament) | Parliament is an AWS IAM linting library | ![IAM linting](https://img.shields.io/github/stars/duo-labs/parliament?style=for-the-badge)| 
-| **Yor** | [Yor](https://github.com/bridgecrewio/yor) | Adds informative and consistent tags across infrastructure-as-code frameworks such as Terraform, CloudFormation, and Serverless | ![Yor](https://img.shields.io/github/stars/bridgecrewio/yor?style=for-the-badge)| 
+| **Yor** | [Yor](https://github.com/bridgecrewio/yor) | Adds informative and consistent tags across infrastructure-as-code frameworks such as Terraform, CloudFormation, and Serverless | ![Yor](https://img.shields.io/github/stars/bridgecrewio/yor?style=for-the-badge)|
+| **AWS Insights** | [https://github.com/turbot/steampipe-mod-aws-insights](https://github.com/turbot/steampipe-mod-aws-insights) | Visualize AWS inventory and permissions through relationship graphs. | [![GitHub stars](https://img.shields.io/github/stars/turbot/steampipe-mod-aws-insights)](https://github.com/turbot/steampipe-mod-aws-insights/stargazers) |
+| **AWS Compliance** | [https://github.com/turbot/steampipe-mod-aws-compliance](https://github.com/turbot/steampipe-mod-aws-compliance) | Check compliance of AWS configurations to security best practices. | [![GitHub stars](https://img.shields.io/github/stars/turbot/steampipe-mod-aws-compliance)](https://github.com/turbot/steampipe-mod-aws-compliance/stargazers) |
+
 
 ## Google cloud platform 
 
@@ -258,8 +286,21 @@ GCP specific DevSecOps tooling. Tools here cover different areas like inventory 
 
 | Name | URL | Description | Meta | 
 | :---------- | :---------- | :---------- | :----------: |
-| **Forseti** | [https://github.com/forseti-security/forseti-security](https://github.com/forseti-security/forseti-security) | Complex security orchestration and scanning platform | ![Forseti](https://img.shields.io/github/stars/forseti-security/forseti-security?style=for-the-badge)| 
+| **Forseti** | [https://github.com/forseti-security/forseti-security](https://github.com/forseti-security/forseti-security) | Complex security orchestration and scanning platform | ![Forseti](https://img.shields.io/github/stars/forseti-security/forseti-security?style=for-the-badge)|
+| **GCP Insights** | [https://github.com/turbot/steampipe-mod-gcp-insights](https://github.com/turbot/steampipe-mod-gcp-insights) | Visualize GCP inventory and permissions through relationship graphs. | [![GitHub stars](https://img.shields.io/github/stars/turbot/steampipe-mod-gcp-insights)](https://github.com/turbot/steampipe-mod-gcp-insights/stargazers) |
+| **GCP Compliance** | [https://github.com/turbot/steampipe-mod-gcp-compliance](https://github.com/turbot/steampipe-mod-gcp-compliance) | Check compliance of GCP configurations to security best practices. | [![GitHub stars](https://img.shields.io/github/stars/turbot/steampipe-mod-gcp-compliance)](https://github.com/turbot/steampipe-mod-gcp-compliance/stargazers) |
 
+
+## Microsoft Azure 
+
+Azure specific DevSecOps tooling. Tools here cover different areas like inventory management, misconfiguration scanning or IAM roles and policies review. 
+
+| Name | URL | Description | Meta | 
+| :---------- | :---------- | :---------- | :----------: |
+| **Azure Insights** | [https://github.com/turbot/steampipe-mod-azure-insights](https://github.com/turbot/steampipe-mod-azure-insights) | Visualize Azure inventory and permissions through relationship graphs. | [![GitHub stars](https://img.shields.io/github/stars/turbot/steampipe-mod-azure-insights)](https://github.com/turbot/steampipe-mod-azure-insights/stargazers) |
+| **Azure Compliance** | [https://github.com/turbot/steampipe-mod-azure-compliance](https://github.com/turbot/steampipe-mod-azure-compliance) | Check compliance of Azure configurations to security best practices. | [![GitHub stars](https://img.shields.io/github/stars/turbot/steampipe-mod-azure-compliance)](https://github.com/turbot/steampipe-mod-azure-compliance/stargazers) |
+| **PSRule.Rules.Azure** | [https://github.com/Azure/PSRule.Rules.Azure](https://github.com/Azure/PSRule.Rules.Azure) | Check ARM, Bicep or Live Azure Tenant for security configuration best practices | [![GitHub stars](https://img.shields.io/github/stars/Azure/PSRule.Rules.Azure)](https://github.com/Azure/PSRule.Rules.Azure/stargazers) |
+| **PSRule.Rules.AzureDevOps** | [https://github.com/cloudyspells/PSRule.Rules.AzureDevOps](https://github.com/cloudyspells/PSRule.Rules.AzureDevOps) | Check Azure DevOps project for security configuration best practices | [![GitHub stars](https://img.shields.io/github/stars/cloudyspells/PSRule.Rules.AzureDevOps)](https://github.com/cloudyspells/PSRule.Rules.AzureDevOps/stargazers) |
 
 ## Policy as code
 
@@ -268,8 +309,10 @@ Policy as code is the idea of writing code in a high-level language to manage an
 | Name | URL | Description | Meta | 
 | :---------- | :---------- | :---------- | :----------: |
 | **Open Policy agent** | [https://github.com/open-policy-agent/opa](https://github.com/open-policy-agent/opa) | General-purpose policy engine that enables unified, context-aware policy enforcement across the entire stack |![OPA](https://img.shields.io/github/stars/open-policy-agent/opa?style=for-the-badge) |
+| **Kyverno** | [https://github.com/kyverno/kyverno](https://github.com/kyverno/kyverno) | Kyverno is a policy engine designed for Kubernetes |![kyverno](https://img.shields.io/github/stars/kyverno/kyverno?style=for-the-badge) | 
 | **Inspec** | [https://github.com/inspec/inspec](https://github.com/inspec/inspec) | Chef InSpec is an open-source testing framework for infrastructure with a human- and machine-readable language for specifying compliance, security and policy requirements. |![Inspec](https://img.shields.io/github/stars/inspec/inspec?style=for-the-badge) | 
-| **Cloud Formation guard** | [https://github.com/aws-cloudformation/cloudformation-guard](https://github.com/aws-cloudformation/cloudformation-guard) | Cloud Formation policy as code |![cf-guard](https://img.shields.io/github/stars/aws-cloudformation/cloudformation-guard?style=for-the-badge) | 
+| **Cloud Formation guard** | [https://github.com/aws-cloudformation/cloudformation-guard](https://github.com/aws-cloudformation/cloudformation-guard) | Cloud Formation policy as code |![cf-guard](https://img.shields.io/github/stars/aws-cloudformation/cloudformation-guard?style=for-the-badge) |
+| **cnspec** | [https://github.com/mondoohq/cnspec](https://github.com/mondoohq/cnspec) | cnspec is a cloud-native and powerful Policy as Code engine to assess the security and compliance of your business-critical infrastructure. cnspec finds vulnerabilities and misconfigurations on all systems in your infrastructure including: public and private cloud environments, Kubernetes clusters, containers, container registries, servers and endpoints, SaaS products, infrastructure as code, APIs, and more. |![cf-guard](https://img.shields.io/github/stars/mondoohq/cnspec?style=for-the-badge) |
 
 
 ## Chaos engineering
@@ -286,6 +329,7 @@ Reading and manifestos: https://principlesofchaos.org/
 | **chaoskube** | [https://github.com/linki/chaoskube ](https://github.com/linki/chaoskube ) | Test how your system behaves under arbitrary pod failures. |![chaoskube](https://img.shields.io/github/stars/linki/chaoskube?style=for-the-badge) |
 | **Kube-Invaders** | [https://github.com/lucky-sideburn/KubeInvaders](https://github.com/lucky-sideburn/KubeInvaders) | Gamified chaos engineering tool for Kubernetes |![chaoskube](https://img.shields.io/github/stars/lucky-sideburn/KubeInvaders?style=for-the-badge) |
 | **kube-monkey** | [https://github.com/asobti/kube-monkey](https://github.com/asobti/kube-monkey) | Gamified chaos engineering tool for Kubernetes |![kube-monkey](https://img.shields.io/github/stars/asobti/kube-monkey?style=for-the-badge) |
+| **Litmus Chaos** | [https://litmuschaos.io/](https://litmuschaos.io/) | Litmus is an end-to-end chaos engineering platform for cloud native infrastructure and applications. Litmus is designed to orchestrate and analyze chaos in their environments. | ![Litmus](https://img.shields.io/github/stars/litmuschaos/litmus?style=for-the-badge) |
 | **Gremlin** | [https://github.com/gremlin/gremlin-python](https://github.com/gremlin/gremlin-python) | Chaos enginnering SaaS platform with free plan and some open source libraries |![Gremlin](https://img.shields.io/github/stars/gremlin/gremlin-python?style=for-the-badge) |
 | **AWS FIS samples** | [https://github.com/aws-samples/aws-fault-injection-simulator-samples](https://github.com/aws-samples/aws-fault-injection-simulator-samples) | AWS Fault injection simulator samples |![AWS](https://img.shields.io/github/stars/aws-samples/aws-fault-injection-simulator-samples?style=for-the-badge) |
 | **CloudNuke** | [https://github.com/gruntwork-io/cloud-nuke](https://github.com/gruntwork-io/cloud-nuke) | CLI tool to delete all resources in an AWS account |![CloudNuke](https://img.shields.io/github/stars/gruntwork-io/cloud-nuke?style=for-the-badge) |
@@ -298,11 +342,21 @@ Scanning your infrastructure when it is only code helps shift-left the security.
 | :---------- | :---------- | :---------- | :----------: |
 | **KICS** | [https://github.com/Checkmarx/kics](https://github.com/Checkmarx/kics) | Checkmarx security testing opensource for IaC |![Checkmarx](https://img.shields.io/github/stars/Checkmarx/kics?style=for-the-badge) | 
 | **Checkov** | [https://github.com/bridgecrewio/checkov](https://github.com/bridgecrewio/checkov) | Checkov is a static code analysis tool for infrastructure-as-code |![Checkov](https://img.shields.io/github/stars/bridgecrewio/checkov?style=for-the-badge) | 
-| **tfsec** | [https://github.com/aquasecurity/tfsec](https://github.com/aquasecurity/tfsec) | tfsec uses static analysis of your terraform templates to spot potential security issues. Now with terraform CDK support |![tfsec](https://img.shields.io/github/stars/aquasecurity/tfsec?style=for-the-badge) | 
+| **Trivy** | [https://github.com/aquasecurity/trivy](https://github.com/aquasecurity/trivy) | Comprehensive scanner for infrastructure-as-code |![Trivy](https://img.shields.io/github/stars/aquasecurity/trivy?style=for-the-badge) | 
 | **terrascan** | [https://github.com/accurics/terrascan](https://github.com/accurics/terrascan) | Terrascan is a static code analyzer for Infrastructure as Code |![terrascan](https://img.shields.io/github/stars/accurics/terrascan?style=for-the-badge) | 
-| **cfsec** | [https://github.com/aquasecurity/cfsec](https://github.com/aquasecurity/cfsec) | cfsec scans CloudFormation configuration files for security issues |![cfsec](https://img.shields.io/github/stars/aquasecurity/cfsec?style=for-the-badge) | 
 | **cfn_nag** | [https://github.com/stelligent/cfn_nag](https://github.com/stelligent/cfn_nag) |  Looks for insecure patterns in CloudFormation |![cfnag](https://img.shields.io/github/stars/stelligent/cfn_nag?style=for-the-badge) | 
-| **Sysdig IaC scanner action** | [https://github.com/sysdiglabs/cloud-iac-scanner-action](https://github.com/sysdiglabs/cloud-iac-scanner-action) |  Scans your repository with Sysdig IAC Scanner and report the vulnerabilities. |![sysdig iac scanner](https://img.shields.io/github/stars/sysdiglabs/cloud-iac-scanner-action?style=for-the-badge) | 
+| **Sysdig IaC scanner action** | [https://github.com/sysdiglabs/cloud-iac-scanner-action](https://github.com/sysdiglabs/cloud-iac-scanner-action) |  Scans your repository with Sysdig IAC Scanner and report the vulnerabilities. |![sysdig iac scanner](https://img.shields.io/github/stars/sysdiglabs/cloud-iac-scanner-action?style=for-the-badge) |
+| **Terraform Compliance for AWS** | [https://github.com/turbot/steampipe-mod-terraform-aws-compliance](https://github.com/turbot/steampipe-mod-terraform-aws-compliance) | Check compliance of Terraform configurations to AWS security best practices. | [![GitHub stars](https://img.shields.io/github/stars/turbot/steampipe-mod-terraform-aws-compliance)](https://github.com/turbot/steampipe-mod-terraform-aws-compliance/stargazers) |
+| **Terraform Compliance for Azure** | [https://github.com/turbot/steampipe-mod-terraform-azure-compliance](https://github.com/turbot/steampipe-mod-terraform-azure-compliance) | Check compliance of Terraform configurations to Azure security best practices. | [![GitHub stars](https://img.shields.io/github/stars/turbot/steampipe-mod-terraform-azure-compliance)](https://github.com/turbot/steampipe-mod-terraform-azure-compliance/stargazers) |
+| **Terraform Compliance for GCP** | [https://github.com/turbot/steampipe-mod-terraform-gcp-compliance](https://github.com/turbot/steampipe-mod-terraform-gcp-compliance) | Check compliance of Terraform configurations to GCP security best practices. | [![GitHub stars](https://img.shields.io/github/stars/turbot/steampipe-mod-terraform-gcp-compliance)](https://github.com/turbot/steampipe-mod-terraform-gcp-compliance/stargazers) |
+| **Terraform Compliance for OCI** | [https://github.com/turbot/steampipe-mod-terraform-oci-compliance](https://github.com/turbot/steampipe-mod-terraform-oci-compliance) | Check compliance of Terraform configurations to OCI security best practices. | [![GitHub stars](https://img.shields.io/github/stars/turbot/steampipe-mod-terraform-oci-compliance)](https://github.com/turbot/steampipe-mod-terraform-oci-compliance/stargazers) |
+
+## Network Intrusion Prevention
+Network Intrusion Prevention (NIP) is a security mechanism used to detect and prevent unauthorized access, attacks, or malicious activities on a computer network. It is designed to monitor network traffic in real-time, identify potential threats, and take proactive measures to mitigate them.
+
+| Name | URL | Description | Meta |
+| :---------- | :---------- | :---------- | :----------: |
+| **CrowdSec** | [https://github.com/crowdsecurity/crowdsec)](https://github.com/crowdsecurity/crowdsec)  |  Crowdsec is an open-source, lightweight software, detecting peers with aggressive behaviours to prevent them from accessing your systems. |![CrowdSec](https://img.shields.io/github/stars/crowdsecurity/crowdsec) |
 
 ## Orchestration 
 
@@ -360,6 +414,7 @@ Here are the other links and resources that do not fit in any previous category.
 | :---------- | :---------- | :---------- | :----------: |
 | **Automated Security Helper (ASH)** | [https://github.com/aws-samples/automated-security-helper](https://github.com/aws-samples/automated-security-helper) | ASH is a one stop shop for security scanners, and does not require any installation. It will identify the different frameworks, and download the relevant, up to date tools. ASH is running on isolated Docker containers, keeping the user environment clean, with a single aggregated report. The following frameworks are supported: Git, Python, Javascript, Cloudformation, Terraform and Jupyter Notebooks.  |![ASH](https://img.shields.io/github/stars/aws-samples/automated-security-helper?style=for-the-badge) | 
 | **Mobile security framework** | [https://github.com/MobSF/Mobile-Security-Framework-MobSF](https://github.com/MobSF/Mobile-Security-Framework-MobSF) | SAST, DAST and pentesting tool for mobile apps |![MobSF](https://img.shields.io/github/stars/MobSF/Mobile-Security-Framework-MobSF?style=for-the-badge) |
+| **Legitify** | [https://github.com/Legit-Labs/legitify](https://github.com/Legit-Labs/legitify) | Detect and remediate misconfigurations and security risks across all your GitHub and GitLab assets  |![Legitify](https://img.shields.io/github/stars/Legit-Labs/legitify?style=for-the-badge) |
 
 Training - https://www.practical-devsecops.com/devsecops-university/ 
 
